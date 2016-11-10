@@ -7,10 +7,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
     <script type="text/javascript" src="./main.js"></script>
     <script type="text/javascript" src="./factory.js"></script>
+    <style media="screen">
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 
 <body ng-controller='whiskeyController as whiskey'>
     <h1> {{whiskey.greeting}} </h1>
+
+    <ul>
+        <li ng-repeat="item in whiskey.data">
+            <h2>Whiskey:</h2>{{ item.name }}
+            <h2>Description:</h2>{{ item.description }}
+            <h2>Price:</h2>{{ item.price }}
+            <button type='submit' ng-click='whiskey.addToCart(item)'>Add to Cart</button>
+        </li>
+    </ul>
+
+    <ul>
+        <h1>CART</h1>
+        <li ng-repeat="item in whiskey.cart">
+            <h2>Whiskey:</h2>{{ item.name }}
+            <h2>Description:</h2>{{ item.description }}
+            <h2>Price:</h2>{{ item.price }}
+            <h2>Count:</h2>{{ item.count }}
+            <!-- <button type='submit' ng-click='whiskey.addToCart(item)'>Add to Cart</button> -->
+        </li>
+    </ul>
+
 
 
 </body>

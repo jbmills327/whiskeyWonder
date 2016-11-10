@@ -4,17 +4,10 @@ angular.module('Whiskey')
 whiskeyFactory.$inject = ['$http'];
 
 function whiskeyFactory($http) {
-    return [{
-        name: 'Jim Beam',
-        description: 'Kentucky Fried Whiskey',
-        price: 20
-    }, {
-        name: 'Jack Daniels',
-        description: 'Tennesse Syrup',
-        price: 25
-    }, {
-        name: 'Makers Mark',
-        description: 'Nectar of the Gods',
-        price: 30
-    }]
+    return {
+        getWhiskey: function(bottleId) {
+            bottleId = bottleId ? '/' + bottleId : '';
+            return $http.get('/api/getWhiskey' + bottleId);
+        }
+    }
 };
