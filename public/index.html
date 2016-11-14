@@ -25,6 +25,16 @@
             <h2>Description:</h2>{{ item.description }}
             <h2>Price:</h2>{{ item.price }}
             <button type='submit' ng-click='whiskey.addToCart(item)'>Add to Cart</button>
+            <button type='submit' ng-click='whiskey.edit()'>Edit</button>
+            <form ng-show="whiskey.showShit">
+
+                <input type="text" placeholder="Whiskey" ng-model="whiskey.addInv.name">
+                <input type="text" placeholder="Description" ng-model="whiskey.addInv.description">
+                <input type="text" placeholder="Price" ng-model="whiskey.addInv.price">
+                <button type='submit' ng-click='whiskey.editSomeShit()'>Go!!!</button>
+
+            </form>
+
         </li>
     </ul>
 
@@ -38,6 +48,18 @@
             <!-- <button type='submit' ng-click='whiskey.addToCart(item)'>Add to Cart</button> -->
         </li>
     </ul>
+
+    <h1>Add Item</h1>
+
+    <form action="">
+        <input type="text" placeholder="Whiskey" ng-model="whiskey.addInv.name">
+        <input type="text" placeholder="Description" ng-model="whiskey.addInv.description">
+        <input type="text" placeholder="Price" ng-model="whiskey.addInv.price">
+        <button type='submit' ng-click='whiskey.create()'>Add to Inventory</button>
+    </form>
+
+
+
 
 
 
